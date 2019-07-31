@@ -43,6 +43,9 @@
                                     Text="{Binding Name}"
                                     FontSize="Medium"
                                     TextColor="Black">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding LandCommand}" />
+                                    </Label.GestureRecognizers>
                                 </Label>
                             </Grid>
                         </ViewCell>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,5 +9,6 @@ namespace Lands.Models
     {
         public string Code { get; set; }
         public string Name { get; set; }
+
     }
 }

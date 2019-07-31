@@ -12,14 +12,14 @@ namespace Lands.ViewsModels
     public class LandViewModel : BaseViewModel
     {
         #region Attributes
-        private ObservableCollection<Border> borders;
+        private ObservableCollection<BorderItemViewModel> borders;
         private ObservableCollection<Currency> currencies;
         private ObservableCollection<Language> languages;
         #endregion
 
         #region Properties
         public Land Land { get; set; }
-        public ObservableCollection<Border> Borders
+        public ObservableCollection<BorderItemViewModel> Borders
         {
             get { return borders; }
             set { SetValue(ref this.borders, value); }
@@ -51,11 +51,11 @@ namespace Lands.ViewsModels
         #region Methods
         private void LoadBorders()
         {
-            Borders = new ObservableCollection<Border>();
+            Borders = new ObservableCollection<BorderItemViewModel>();
             foreach (var item in Land.Borders)
             {
                 var item_selected = MainViewModel.GetInstance().list.Where(l => l.Alpha3Code == item).FirstOrDefault();
-                Borders.Add(new Border() { Code = item_selected.Alpha3Code, Name = item_selected.Name });
+                Borders.Add(new BorderItemViewModel() { Code = item_selected.Alpha3Code, Name = item_selected.Name });
             }
         }
         private void LoadCurrencies() => Currencies = new ObservableCollection<Currency>(Land.Currencies);
