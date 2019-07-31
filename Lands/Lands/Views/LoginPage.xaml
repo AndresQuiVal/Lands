@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Lands.Views.LoginPage"
+             Title="Login"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"><!--Navega a los recursos del diccionario/ en App.xaml-->
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Login}">
+            <StackLayout
+                Padding="10">
+                <Grid
+                    Margin="0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="UserName"
+                        FontSize="Default"
+                        TextColor="Orange"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                        Grid.Row="0"
+                        Text="{Binding Email, Mode=TwoWay}"
+                        Grid.Column="1"
+                        Placeholder="Enter the email"
+                        Keyboard="Email">
+                    </Entry>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Text="Password"
+                        FontSize="Default"
+                        TextColor="Orange"
+                        VerticalOptions="Center">
+                    </Label>
+                    <Entry
+                        Grid.Row="1"
+                        Text="{Binding Password, Mode=TwoWay}"
+                        Grid.Column="1"
+                        Placeholder="Enter the password"
+                        IsPassword="True">
+                    </Entry>
+                </Grid>
+                <StackLayout
+                    Padding="7"
+                    Orientation="Horizontal">
+                    <Label
+                        Text="Remember me"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Start">
+                    </Label>
+                    <Switch
+                        IsToggled="{Binding IsRemembered, Mode=TwoWay}">
+                    </Switch>
+                </StackLayout>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning, Mode=TwoWay}">
+                </ActivityIndicator>
+                <Label
+                    Text="¿Forgot your password?"
+                    TextColor="Blue"
+                    FontSize="Default"
+                    HorizontalOptions="Center">
+                </Label>
+                <StackLayout
+                    Orientation="Horizontal"
+                    Margin="40,0">
+                    <Button
+                        Text="Login"
+                        FontAttributes="Bold"
+                        Command="{Binding LoginCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        BackgroundColor="Blue"
+                        CornerRadius="20"
+                        TextColor="White"
+                        FontSize="Default"
+                        HorizontalOptions="FillAndExpand">
+                    </Button>
+                    <Button
+                        Text="Register"
+                        Command="{Binding RegisterCommand}"
+                        BackgroundColor="DarkSlateBlue"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        HorizontalOptions="FillAndExpand"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        TextColor="White"
+                        FontSize="Default">
+                    </Button>
+                </StackLayout>
+                <StackLayout
+                    Orientation="Horizontal"
+                    VerticalOptions="Center"
+                    Padding="20">
+                    <Button
+                        Text="Facebook"
+                        TextColor="White"
+                        BackgroundColor="DarkBlue"
+                        CornerRadius="20">
+                    </Button>
+                    <Button
+                        Text="Twitter"
+                        TextColor="White"
+                        BackgroundColor="Blue"
+                        CornerRadius="20">
+                    </Button>
+                    <Button
+                        Text="Instagram"
+                        TextColor="White"
+                        BackgroundColor="DeepPink"
+                        CornerRadius="20">
+                    </Button>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

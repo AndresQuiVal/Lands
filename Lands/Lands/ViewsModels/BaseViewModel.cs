@@ -11,7 +11,7 @@ namespace Lands.ViewsModels
     using System.Runtime.CompilerServices;
     #endregion
 
-    class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         #region Events
         public event PropertyChangedEventHandler PropertyChanged;
@@ -33,5 +33,17 @@ namespace Lands.ViewsModels
         }
         #endregion
 
+        //part 2
+
+        //public static void SetValue<T>(ref T backingField, T _value, Object _this, T prop)
+        //{
+        //    if (backingField != _value) //password - Password
+        //    {
+        //        backingField = _value;
+        //        PropertyChanged?.Invoke(
+        //        _this,
+        //        new PropertyChangedEventHandler(nameof(prop)))
+        //    }
+        //}
     }
 }

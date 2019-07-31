@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="Lands.Views.LanguagesPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Languages"
+    Icon="ic_language">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Land}">
+            <Label
+                Text="{Binding Land.Name}"
+                FontSize="Large"
+                FontAttributes="Bold"
+                HorizontalOptions="CenterAndExpand"
+                TextColor="Black">
+            </Label>
+            <ListView
+                ItemsSource="{Binding Languages}"
+                HasUnevenRows="true"
+                HorizontalOptions="CenterAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Column="0"
+                                    Text="{Binding Name}"
+                                    FontSize="Medium"
+                                    TextColor="Black">
+                                </Label>
+                                <Label
+                                    Grid.Column="1"
+                                    Text="{Binding NativeName}"
+                                    FontSize="Medium"
+                                    TextColor="Black">
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

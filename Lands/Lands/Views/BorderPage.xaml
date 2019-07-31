@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Class="Lands.Views.BorderPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Border"
+    Icon="ic_account_balance">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Land}"
+            Padding="10">
+            <Label
+                Text="{Binding Land.Name, Mode=TwoWay}"
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="Large"
+                TextColor="Black">
+            </Label>
+            <ListView
+                ItemsSource="{Binding Borders}"
+                HasUnevenRows="true"
+                HorizontalOptions="CenterAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Column="0"
+                                    Text="{Binding Code}"
+                                    FontSize="Medium"
+                                    TextColor="Black">
+                                </Label>
+                                <Label
+                                    Grid.Column="1"
+                                    Text="{Binding Name}"
+                                    FontSize="Medium"
+                                    TextColor="Black">
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
