@@ -7,7 +7,7 @@
              x:Class="Lands.Views.LandsPage"
              xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="{Binding Main.Lands.Lands.Name}">
+             Title="Lands">
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Lands}"
