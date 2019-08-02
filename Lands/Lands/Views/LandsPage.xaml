@@ -15,7 +15,8 @@
             <SearchBar
                 Placeholder="Search land"
                 Text="{Binding TextFilter}"
-                SearchCommand="{Binding Search}">
+                SearchCommand="{Binding Search}"
+                HeightRequest="46"> <!--HeightRequest important for other versions of Android OS-->
             </SearchBar>
             <ListView
                 HasUnevenRows="true" 
