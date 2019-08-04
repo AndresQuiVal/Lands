@@ -13,6 +13,7 @@ namespace Lands.Services
     using Models;
     using Newtonsoft.Json;
     using Plugin.Connectivity;
+    using Lands.Helpers;
 
     public class ApiService : Response
     {
@@ -23,7 +24,7 @@ namespace Lands.Services
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Please turn on your internet settings.",
+                    Message = Languages.ErrorInternetDescrption,
                 };
             }
 

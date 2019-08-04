@@ -10,6 +10,7 @@ using Xamarin.Forms;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 using System.Linq;
+using Lands.Helpers;
 
 namespace Lands.ViewsModels
 {
@@ -71,9 +72,9 @@ namespace Lands.ViewsModels
                 if (!response.IsSuccess)
                 {
                     await Application.Current.MainPage.DisplayAlert(
-                        "Error",
+                        Languages.ErrorTitle,
                         response.Message,
-                        "Accept");
+                        Languages.AcceptButton);
                     await Application.Current.MainPage.Navigation.PopAsync();
                     IsRefreshing = false;
                     return;
@@ -84,9 +85,9 @@ namespace Lands.ViewsModels
                 return;
             }
             await Application.Current.MainPage.DisplayAlert(
-                "Error",
-                "Please connect to an internet network",
-                "Accept");
+                Languages.ErrorTitle,
+                Languages.ErrorDescription,
+                Languages.AcceptButton);
             await Application.Current.MainPage.Navigation.PopAsync();
             IsRefreshing = false;
         }
@@ -141,7 +142,6 @@ namespace Lands.ViewsModels
                 Translations = l.Translations,
             });
         }
-
         #endregion
 
         #region Lambda Expressions

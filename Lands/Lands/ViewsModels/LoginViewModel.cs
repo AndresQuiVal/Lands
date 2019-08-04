@@ -11,6 +11,7 @@ namespace Lands.ViewsModels
     using GalaSoft.MvvmLight.Command;
     using Lands.Services;
     using Models;
+    using Lands.Helpers;
     #endregion
 
     class LoginViewModel : BaseViewModel // Class that with allow us to change the value of the props in execution time of the app
@@ -78,9 +79,9 @@ namespace Lands.ViewsModels
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.ErrorTitle,
                     internet_connection.Message,
-                    "Accept");
+                    Languages.AcceptButton);
                 return;
             }
             TokenResponse token = await apiService.GetToken(
@@ -92,9 +93,9 @@ namespace Lands.ViewsModels
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Something was wrong... \ntry later please.",
-                    "Accept");
+                    Languages.ErrorTitle,
+                    Languages.ErrorUhandledDescription,
+                    Languages.AcceptButton);
                 return;
             }
 
@@ -104,9 +105,9 @@ namespace Lands.ViewsModels
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.ErrorTitle,
                     token.ErrorDescription,
-                    "Accept");
+                    Languages.AcceptButton);
                 return;
             }
             this.IsRunning = false;
