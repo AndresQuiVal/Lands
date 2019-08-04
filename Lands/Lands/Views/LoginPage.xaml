@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="Lands.Views.LoginPage"
              Title="Login"
+             xmlns:translate="clr-namespace:Lands.Helpers"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"><!--Navega a los recursos del diccionario/ en App.xaml-->
     <ContentPage.Content>
         <ScrollView
@@ -21,7 +22,7 @@
                     <Label
                         Grid.Row="0"
                         Grid.Column="0"
-                        Text="UserName"
+                        Text="Email"
                         FontSize="Default"
                         TextColor="Orange"
                         VerticalOptions="Center">
@@ -30,13 +31,13 @@
                         Grid.Row="0"
                         Text="{Binding Email, Mode=TwoWay}"
                         Grid.Column="1"
-                        Placeholder="Enter the email"
+                        Placeholder="{translate:TranslateExtension EmailPlaceHolder}"
                         Keyboard="Email">
                     </Entry>
                     <Label
                         Grid.Column="0"
                         Grid.Row="1"
-                        Text="Password"
+                        Text="{translate:Translate PasswordText}"
                         FontSize="Default"
                         TextColor="Orange"
                         VerticalOptions="Center">
@@ -45,7 +46,7 @@
                         Grid.Row="1"
                         Text="{Binding Password, Mode=TwoWay}"
                         Grid.Column="1"
-                        Placeholder="Enter the password"
+                        Placeholder="{translate:TranslateExtension PasswordPlaceHolder}"
                         IsPassword="True">
                     </Entry>
                 </Grid>
@@ -53,7 +54,7 @@
                     Padding="7"
                     Orientation="Horizontal">
                     <Label
-                        Text="Remember me"
+                        Text="{translate:TranslateExtension RememberMe}"
                         VerticalOptions="Center"
                         HorizontalOptions="Start">
                     </Label>
@@ -65,7 +66,7 @@
                     IsRunning="{Binding IsRunning, Mode=TwoWay}">
                 </ActivityIndicator>
                 <Label
-                    Text="¿Forgot your password?"
+                    Text="{translate:TranslateExtension ForgotYourPassword}"
                     TextColor="Blue"
                     FontSize="Default"
                     HorizontalOptions="Center">
@@ -74,7 +75,7 @@
                     Orientation="Horizontal"
                     Margin="40,0">
                     <Button
-                        Text="Login"
+                        Text="{translate:TranslateExtension LoginTextButton}"
                         FontAttributes="Bold"
                         Command="{Binding LoginCommand}"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
@@ -85,7 +86,7 @@
                         HorizontalOptions="FillAndExpand">
                     </Button>
                     <Button
-                        Text="Register"
+                        Text="{translate:TranslateExtension RegisterTextButton}"
                         Command="{Binding RegisterCommand}"
                         BackgroundColor="DarkSlateBlue"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"

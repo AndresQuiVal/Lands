@@ -70,6 +70,123 @@ namespace Lands.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AlphaCode 2.
+        /// </summary>
+        internal static string AlphaCode2Text {
+            get {
+                return ResourceManager.GetString("AlphaCode2Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AlphaCode 3.
+        /// </summary>
+        internal static string AlphaCode3Text {
+            get {
+                return ResourceManager.GetString("AlphaCode3Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Area.
+        /// </summary>
+        internal static string AreaText {
+            get {
+                return ResourceManager.GetString("AreaText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Border.
+        /// </summary>
+        internal static string BorderTabbedText {
+            get {
+                return ResourceManager.GetString("BorderTabbedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Brasilian.
+        /// </summary>
+        internal static string BrasilianTranslation {
+            get {
+                return ResourceManager.GetString("BrasilianTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Capital.
+        /// </summary>
+        internal static string CapitalText {
+            get {
+                return ResourceManager.GetString("CapitalText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cioc.
+        /// </summary>
+        internal static string CiocText {
+            get {
+                return ResourceManager.GetString("CiocText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Croatian.
+        /// </summary>
+        internal static string CroatianTranslation {
+            get {
+                return ResourceManager.GetString("CroatianTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Currencies.
+        /// </summary>
+        internal static string CurrenciesTabbedText {
+            get {
+                return ResourceManager.GetString("CurrenciesTabbedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Danish.
+        /// </summary>
+        internal static string DanishTranslation {
+            get {
+                return ResourceManager.GetString("DanishTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Denonym.
+        /// </summary>
+        internal static string DenonymText {
+            get {
+                return ResourceManager.GetString("DenonymText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dutch.
+        /// </summary>
+        internal static string DutchTranslation {
+            get {
+                return ResourceManager.GetString("DutchTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Introduce your e mail.
+        /// </summary>
+        internal static string EmailPlaceHolder {
+            get {
+                return ResourceManager.GetString("EmailPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please make sure your device has wi-fi connection.
         /// </summary>
         internal static string ErrorDescription {
@@ -97,11 +214,209 @@ namespace Lands.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quelque chose n&apos;allait pas, veuillez essayer plus tard..
+        ///   Looks up a localized string similar to Something got wrong, please try later..
         /// </summary>
         internal static string ErrorUnhandledDescription {
             get {
                 return ResourceManager.GetString("ErrorUnhandledDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forgot your password?.
+        /// </summary>
+        internal static string ForgotYourPassword {
+            get {
+                return ResourceManager.GetString("ForgotYourPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to French.
+        /// </summary>
+        internal static string FrenchTranslation {
+            get {
+                return ResourceManager.GetString("FrenchTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to General.
+        /// </summary>
+        internal static string GeneralTabbedText {
+            get {
+                return ResourceManager.GetString("GeneralTabbedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to German.
+        /// </summary>
+        internal static string GermanTranslation {
+            get {
+                return ResourceManager.GetString("GermanTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gini.
+        /// </summary>
+        internal static string GiniText {
+            get {
+                return ResourceManager.GetString("GiniText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Italian.
+        /// </summary>
+        internal static string ItalianTranslation {
+            get {
+                return ResourceManager.GetString("ItalianTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Japanese.
+        /// </summary>
+        internal static string JapaneseTranslation {
+            get {
+                return ResourceManager.GetString("JapaneseTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Languages.
+        /// </summary>
+        internal static string LanguagesTabbedText {
+            get {
+                return ResourceManager.GetString("LanguagesTabbedText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        internal static string LoginTextButton {
+            get {
+                return ResourceManager.GetString("LoginTextButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Native name.
+        /// </summary>
+        internal static string NativeNameText {
+            get {
+                return ResourceManager.GetString("NativeNameText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Numeric code.
+        /// </summary>
+        internal static string NumericCodeText {
+            get {
+                return ResourceManager.GetString("NumericCodeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Introduce your password.
+        /// </summary>
+        internal static string PasswordPlaceHolder {
+            get {
+                return ResourceManager.GetString("PasswordPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        internal static string PasswordText {
+            get {
+                return ResourceManager.GetString("PasswordText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Population range.
+        /// </summary>
+        internal static string PopulationRangeText {
+            get {
+                return ResourceManager.GetString("PopulationRangeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Portugese.
+        /// </summary>
+        internal static string PortugeseTranslation {
+            get {
+                return ResourceManager.GetString("PortugeseTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Region.
+        /// </summary>
+        internal static string RegionText {
+            get {
+                return ResourceManager.GetString("RegionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        internal static string RegisterTextButton {
+            get {
+                return ResourceManager.GetString("RegisterTextButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember me.
+        /// </summary>
+        internal static string RememberMe {
+            get {
+                return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search land.
+        /// </summary>
+        internal static string SearchLandPlaceHolder {
+            get {
+                return ResourceManager.GetString("SearchLandPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Spanish.
+        /// </summary>
+        internal static string SpanishTranslation {
+            get {
+                return ResourceManager.GetString("SpanishTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Subregion.
+        /// </summary>
+        internal static string SubRegionText {
+            get {
+                return ResourceManager.GetString("SubRegionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Translations.
+        /// </summary>
+        internal static string TranslationsTabbedText {
+            get {
+                return ResourceManager.GetString("TranslationsTabbedText", resourceCulture);
             }
         }
     }

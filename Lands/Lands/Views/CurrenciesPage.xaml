@@ -7,7 +7,8 @@
     mc:Ignorable="d"
     x:Class="Lands.Views.CurrenciesPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="Currencies"
+    xmlns:translate="clr-namespace:Lands.Helpers"
+    Title="{translate:Translate CurrenciesTabbedPage}"
     Icon="ic_attach_money">
     <ContentPage.Content>
         <StackLayout

@@ -5,10 +5,11 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:translate="clr-namespace:Lands.Helpers"
     mc:Ignorable="d"
     x:Class="Lands.Views.LandPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="General"
+    Title="{translate:Translate GeneralTabbedText}"
     Icon="ic_info_outline">
     <ContentPage.Content>
         <ScrollView
@@ -35,7 +36,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="0"
-                        Text="Capital: "
+                        Text="{translate:TranslateExtension CapitalText}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -48,7 +49,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="1"
-                        Text="Population range: "
+                        Text="{translate:TranslateExtension PopulationRangeText}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -61,7 +62,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="2"
-                        Text="Area: "
+                        Text="{translate:TranslateExtension AreaText}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -74,7 +75,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="3"
-                        Text="AlphaCode 2: "
+                        Text="{translate:TranslateExtension AlphaCode2Text}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -87,7 +88,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="4"
-                        Text="AlphaCode 3: "
+                        Text="{translate:TranslateExtension AlphaCode3Text}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -100,7 +101,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="5"
-                        Text="Region: "
+                        Text="{translate:TranslateExtension RegionText}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -113,7 +114,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="6"
-                        Text="Subregion: "
+                        Text="{translate:TranslateExtension SubRegionText}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -126,7 +127,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="7"
-                        Text="Denonym: "
+                        Text="{translate:TranslateExtension DenonymText}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -139,7 +140,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="8"
-                        Text="Gini: "
+                        Text="{translate:TranslateExtension GiniText}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -152,7 +153,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="9"
-                        Text="Native name: "
+                        Text="{translate:TranslateExtension NativeNameText}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -165,7 +166,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="10"
-                        Text="Numeric code: "
+                        Text="{translate:TranslateExtension NumericCodeText}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -178,7 +179,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="11"
-                        Text="Cioc: "
+                        Text="{translate:TranslateExtension CiocText}"
                         TextColor="Black">
                     </Label>
                     <Label

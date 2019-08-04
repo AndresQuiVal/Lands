@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              x:Class="Lands.Views.LandsPage"
              xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:translate="clr-namespace:Lands.Helpers"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Lands">
     <ContentPage.Content>
@@ -13,7 +14,7 @@
             BindingContext="{Binding Lands}"
             Padding="10">
             <SearchBar
-                Placeholder="Search land"
+                Placeholder="{translate:TranslateExtension SearchLandPlaceHolder}"
                 Text="{Binding TextFilter}"
                 SearchCommand="{Binding Search}"
                 HeightRequest="46"> <!--HeightRequest important for other versions of Android OS-->

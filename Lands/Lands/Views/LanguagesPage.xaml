@@ -6,8 +6,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     x:Class="Lands.Views.LanguagesPage"
+    xmlns:translate="clr-namespace:Lands.Helpers"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="Languages"
+    Title="{translate:Translate LanguagesTabbedText}"
     Icon="ic_language">
     <ContentPage.Content>
         <StackLayout

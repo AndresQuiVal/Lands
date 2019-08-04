@@ -35,7 +35,7 @@ namespace Lands.Services
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Check you internet connection.",
+                    Message = Languages.ErrorDescription,
                 };
             }
 

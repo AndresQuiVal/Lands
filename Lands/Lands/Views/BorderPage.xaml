@@ -6,8 +6,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     x:Class="Lands.Views.BorderPage"
+    xmlns:translate="clr-namespace:Lands.Helpers"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="Border"
+    Title="{translate:Translate BorderTabbedText}"
     Icon="ic_account_balance">
     <ContentPage.Content>
         <StackLayout

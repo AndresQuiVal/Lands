@@ -7,7 +7,8 @@
     mc:Ignorable="d"
     x:Class="Lands.Views.TranslationsPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="Translations"
+    xmlns:translation="clr-namespace:Lands.Helpers"
+    Title="{translation:Translate TranslationTabbedText}"
     Icon="ic_translate">
     <ContentPage.Content>
         <StackLayout
@@ -40,9 +41,7 @@
                 <Label 
                     Grid.Column="0"
                     Grid.Row="0"
-                    Text="German "
-                    FontAttributes="Bold"
-                    TextColor="Black">
+                    Text="{translation:Translate GermanTranslation}">
                 </Label>
                 <Label 
                     Grid.Column="1"
@@ -54,7 +53,7 @@
                 <Label 
                     Grid.Row="1"
                     Grid.Column="0"
-                    Text="Spanish "
+                    Text="{translation:Translate SpanishTranslation}"
                     FontAttributes="Bold"
                     TextColor="Black">
                 </Label>
@@ -68,7 +67,7 @@
                 <Label 
                     Grid.Row="2"
                     Grid.Column="0"
-                    Text="French "
+                    Text="{translation:Translate FrenchTranslation}"
                     FontAttributes="Bold"
                     TextColor="Black">
                 </Label>
@@ -83,7 +82,7 @@
                     TextColor="Black"
                     Grid.Row="3"
                     Grid.Column="0"
-                    Text="Japanese "
+                    Text="{translation:Translate JapaneseTranslation}"
                     FontAttributes="Bold">
                 </Label>
                 <Label 
@@ -97,7 +96,7 @@
                     Grid.Row="4"
                     TextColor="Black"
                     Grid.Column="0"
-                    Text="Italian "
+                    Text="{translation:Translate ItalianTranslation}"
                     FontAttributes="Bold">
                 </Label>
                 <Label 
@@ -111,7 +110,7 @@
                     Grid.Row="5"
                     TextColor="Black"
                     Grid.Column="0"
-                    Text="Brasilia "
+                    Text="{translation:Translate BrasilianTranslation}"
                     FontAttributes="Bold">
                 </Label>
                 <Label 
@@ -125,7 +124,7 @@
                     Grid.Row="6"
                     TextColor="Black"
                     Grid.Column="0"
-                    Text="Portugesse "
+                    Text="{translation:Translate PortugeseTranslation}"
                     FontAttributes="Bold">
                 </Label>
                 <Label 
@@ -139,7 +138,7 @@
                     Grid.Row="7"
                     TextColor="Black"
                     Grid.Column="0"
-                    Text="Dutch "
+                    Text="{translation:Translate DutchTranslation}"
                     FontAttributes="Bold">
                 </Label>
                 <Label 
@@ -153,7 +152,7 @@
                     Grid.Row="8"
                     TextColor="Black"
                     Grid.Column="0"
-                    Text="Croatian "
+                    Text="{translation:Translate CroatianTranslation}"
                     FontAttributes="Bold">
                 </Label>
                 <Label 
@@ -167,7 +166,7 @@
                     TextColor="Black"
                     Grid.Row="9"
                     Grid.Column="0"
-                    Text="Danish "
+                    Text="{translation:Translate DanishTranslation}"
                     FontAttributes="Bold">
                 </Label>
                 <Label 

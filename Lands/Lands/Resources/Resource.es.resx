@@ -120,6 +120,45 @@
   <data name="AcceptButton" xml:space="preserve">
     <value>Aceptar</value>
   </data>
+  <data name="AlphaCode2Text" xml:space="preserve">
+    <value>Codigo alpha 2</value>
+  </data>
+  <data name="AlphaCode3Text" xml:space="preserve">
+    <value>Codigo alpha 3</value>
+  </data>
+  <data name="AreaText" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="BorderTabbedText" xml:space="preserve">
+    <value>Bordes</value>
+  </data>
+  <data name="BrasilianTranslation" xml:space="preserve">
+    <value>Braliseno</value>
+  </data>
+  <data name="CapitalText" xml:space="preserve">
+    <value>Capital</value>
+  </data>
+  <data name="CiocText" xml:space="preserve">
+    <value>Cioc</value>
+  </data>
+  <data name="CroatianTranslation" xml:space="preserve">
+    <value>Croata</value>
+  </data>
+  <data name="CurrenciesTabbedText" xml:space="preserve">
+    <value>Moneda</value>
+  </data>
+  <data name="DanishTranslation" xml:space="preserve">
+    <value>Danes</value>
+  </data>
+  <data name="DenonymText" xml:space="preserve">
+    <value>Demonio</value>
+  </data>
+  <data name="DutchTranslation" xml:space="preserve">
+    <value>Holandes</value>
+  </data>
+  <data name="EmailPlaceHolder" xml:space="preserve">
+    <value>Introduce tu e mail</value>
+  </data>
   <data name="ErrorDescription" xml:space="preserve">
     <value>Por favor asegurate de tener el dispositivo conectado a wi-fi</value>
   </data>
@@ -131,5 +170,71 @@
   </data>
   <data name="ErrorUnhandledDescription" xml:space="preserve">
     <value>Algo salio mal, por favor intenta de nuevo mas tarde.</value>
+  </data>
+  <data name="ForgotYourPassword" xml:space="preserve">
+    <value>Olvidaste tu contrasena?</value>
+  </data>
+  <data name="FrenchTranslation" xml:space="preserve">
+    <value>Frances</value>
+  </data>
+  <data name="GeneralTabbedText" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="GermanTranslation" xml:space="preserve">
+    <value>Aleman</value>
+  </data>
+  <data name="GiniText" xml:space="preserve">
+    <value>Gini</value>
+  </data>
+  <data name="ItalianTranslation" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="JapaneseTranslation" xml:space="preserve">
+    <value>Japones</value>
+  </data>
+  <data name="LanguagesTabbedText" xml:space="preserve">
+    <value>Lenguajes</value>
+  </data>
+  <data name="LoginTextButton" xml:space="preserve">
+    <value>Ingresar</value>
+  </data>
+  <data name="NativeNameText" xml:space="preserve">
+    <value>Nombre nativo</value>
+  </data>
+  <data name="NumericCodeText" xml:space="preserve">
+    <value>Codigo numerico</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Introduce tu contrasena</value>
+  </data>
+  <data name="PasswordText" xml:space="preserve">
+    <value>Contrasena</value>
+  </data>
+  <data name="PopulationRangeText" xml:space="preserve">
+    <value>Rango de populacion</value>
+  </data>
+  <data name="PortugeseTranslation" xml:space="preserve">
+    <value>Portuges</value>
+  </data>
+  <data name="RegionText" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="RegisterTextButton" xml:space="preserve">
+    <value>Registrarse</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Recordarme</value>
+  </data>
+  <data name="SearchLandPlaceHolder" xml:space="preserve">
+    <value>Buscar pais</value>
+  </data>
+  <data name="SpanishTranslation" xml:space="preserve">
+    <value>Espanol</value>
+  </data>
+  <data name="SubRegionText" xml:space="preserve">
+    <value>Sub region</value>
+  </data>
+  <data name="TranslationsTabbedText" xml:space="preserve">
+    <value>Traduccion</value>
   </data>
 </root>
