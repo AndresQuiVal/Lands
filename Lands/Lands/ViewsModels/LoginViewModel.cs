@@ -118,7 +118,8 @@ namespace Lands.ViewsModels
             //    "Accept");
 
             MainViewModel.GetInstance().Lands = new LandsViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
+            Application.Current.MainPage = new MasterPage();
+            //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
         }
         #endregion
     }

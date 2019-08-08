@@ -68,7 +68,7 @@ namespace Lands.ViewsModels
                 Response response = await this.apiService.GetList<Land>( //metodo que devuelve un dato de tipo Response con propiedades inicializadas
                     "https://restcountries.eu",
                     "/rest",
-                    "/v2/all");
+                    "/v2/all"); // string controller parameter
                 if (!response.IsSuccess)
                 {
                     await Application.Current.MainPage.DisplayAlert(
