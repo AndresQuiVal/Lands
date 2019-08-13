@@ -75,7 +75,7 @@ namespace Lands.ViewsModels
                         Languages.ErrorTitle,
                         response.Message,
                         Languages.AcceptButton);
-                    await Application.Current.MainPage.Navigation.PopAsync();
+                    Application.Current.MainPage = new NavigationPage(new LoginPage());
                     IsRefreshing = false;
                     return;
                 }
@@ -88,7 +88,7 @@ namespace Lands.ViewsModels
                 Languages.ErrorTitle,
                 Languages.ErrorDescription,
                 Languages.AcceptButton);
-            await Application.Current.MainPage.Navigation.PopAsync();
+            Application.Current.MainPage = new NavigationPage(new LoginPage());
             IsRefreshing = false;
         }
 

@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using Lands.Helpers;
 using Lands.Views;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,8 @@ namespace Lands.ViewsModels
             {
                 MainViewModel.GetInstance().Login.Email = "";
                 MainViewModel.GetInstance().Login.Password = "";
+                Settings.Token = string.Empty;
+                Settings.TokenType = string.Empty;
                 Application.Current.MainPage = new NavigationPage(new LoginPage());
             }
         }

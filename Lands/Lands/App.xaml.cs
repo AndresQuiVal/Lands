@@ -1,10 +1,12 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Lands.Helpers;
+using Lands.Views;
+using Lands.ViewsModels;
 
 namespace Lands
 {
-    using Lands.Views;
     public partial class App : Application
     {
         public static NavigationPage Navigator { get; internal set; }
@@ -12,8 +14,17 @@ namespace Lands
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage(new LoginPage());
+            if (String.IsNullOrEmpty(Settings.Token))
+            {
+                MainPage = new NavigationPage(new LoginPage());
+            }
+            else
+            {
+                MainViewModel.GetInstance().Token = Settings.Token;
+                MainViewModel.GetInstance().TokenType = Settings.TokenType;
+                MainViewModel.GetInstance().Lands = new LandsViewModel();
+                MainPage = new MasterPage();
+            }
         }
 
         protected override void OnStart()

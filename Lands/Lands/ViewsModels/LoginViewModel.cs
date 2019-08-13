@@ -110,6 +110,19 @@ namespace Lands.ViewsModels
                     Languages.AcceptButton);
                 return;
             }
+
+            if (this.IsRemembered)
+            {
+                Settings.Token = token.AccessToken;
+                Settings.TokenType = token.TokenType;
+            }
+            else
+            {
+                Settings.Token = token.AccessToken;
+                Settings.TokenType = token.TokenType;
+            }
+            MainViewModel.GetInstance().Token = token.AccessToken;
+            MainViewModel.GetInstance().TokenType = token.TokenType;
             this.IsRunning = false;
             this.IsEnabled = true;
             //await Application.Current.MainPage.DisplayAlert(
