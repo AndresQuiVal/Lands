@@ -17,6 +17,7 @@ namespace Lands.ViewsModels
         public LoginViewModel Login { get; set; }
         public LandsViewModel Lands { get; set; }
         public LandViewModel Land { get; set; }
+        public RegisterViewModel Register { get; set; }
         public string Token { get; set; }
         public string TokenType { get; set; }
 

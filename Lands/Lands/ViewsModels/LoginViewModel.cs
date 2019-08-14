@@ -57,7 +57,13 @@ namespace Lands.ViewsModels
             }
         }   /*return;// new RelayCommand(LoginMethod());}*/
 
-        public ICommand RegisterCommand { get; } // property that references the Command for the specific Button
+        public ICommand RegisterCommand
+        {
+            get
+            {
+                return new RelayCommand(RegisterMethod);
+            }
+        } // property that references the Command for the specific Button
         #endregion
 
         #region Constructors
@@ -133,6 +139,12 @@ namespace Lands.ViewsModels
             MainViewModel.GetInstance().Lands = new LandsViewModel();
             Application.Current.MainPage = new MasterPage();
             //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
+        }
+
+        public async void RegisterMethod()
+        {
+            MainViewModel.GetInstance().Register = new RegisterViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
         }
         #endregion
     }
