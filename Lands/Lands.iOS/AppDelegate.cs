@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using ImageCircle.Forms.Plugin.iOS;
 using UIKit;
 
 namespace Lands.iOS
@@ -23,7 +24,8 @@ namespace Lands.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(); // personalized added method for FFImageLoading images SVG
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();// personalized added method for FFImageLoading images SVG
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

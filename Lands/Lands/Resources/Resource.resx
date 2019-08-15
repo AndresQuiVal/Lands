@@ -135,6 +135,9 @@
   <data name="BrasilianTranslation" xml:space="preserve">
     <value>Brasilian</value>
   </data>
+  <data name="CancelTextButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="CapitalText" xml:space="preserve">
     <value>Capital</value>
   </data>
@@ -177,6 +180,9 @@
   <data name="FrenchTranslation" xml:space="preserve">
     <value>French</value>
   </data>
+  <data name="GalleryTextButton" xml:space="preserve">
+    <value>From gallery</value>
+  </data>
   <data name="GeneralTabbedText" xml:space="preserve">
     <value>General</value>
   </data>
@@ -210,11 +216,17 @@
   <data name="PasswordText" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="PhotoTextButton" xml:space="preserve">
+    <value>Take a photo</value>
+  </data>
   <data name="PopulationRangeText" xml:space="preserve">
     <value>Population range</value>
   </data>
   <data name="PortugeseTranslation" xml:space="preserve">
     <value>Portugese</value>
+  </data>
+  <data name="QuestionActionSheet" xml:space="preserve">
+    <value>From where you want to take the image?</value>
   </data>
   <data name="RegionText" xml:space="preserve">
     <value>Region</value>

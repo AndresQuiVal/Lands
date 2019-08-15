@@ -58,6 +58,10 @@ namespace Lands.Helpers
         public static string CurrenciesTabbedText { get { return Resource.CurrenciesTabbedText; } }
         public static string TranslationsTabbedText { get { return Resource.TranslationsTabbedText; } }
         public static string LanguageTabbedText { get { return Resource.LanguagesTabbedText; } }
+        public static string CancelTextButton { get { return Resource.CancelTextButton; } }
+        public static string QuestionActionSheet { get { return Resource.QuestionActionSheet; } }
+        public static string GalleryTextButton { get { return Resource.GalleryTextButton; } }
+        public static string PhotoTextButton { get { return Resource.PhotoTextButton; } }
         #endregion       
     }
 }

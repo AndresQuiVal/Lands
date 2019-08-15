@@ -115,6 +115,15 @@ namespace Lands.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        public static string CancelTextButton {
+            get {
+                return ResourceManager.GetString("CancelTextButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Capital.
         /// </summary>
         public static string CapitalText {
@@ -241,6 +250,15 @@ namespace Lands.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From gallery.
+        /// </summary>
+        public static string GalleryTextButton {
+            get {
+                return ResourceManager.GetString("GalleryTextButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to General.
         /// </summary>
         public static string GeneralTabbedText {
@@ -340,6 +358,15 @@ namespace Lands.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Take a photo.
+        /// </summary>
+        public static string PhotoTextButton {
+            get {
+                return ResourceManager.GetString("PhotoTextButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Population range.
         /// </summary>
         public static string PopulationRangeText {
@@ -354,6 +381,15 @@ namespace Lands.Resources {
         public static string PortugeseTranslation {
             get {
                 return ResourceManager.GetString("PortugeseTranslation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From where you want to take the image?.
+        /// </summary>
+        public static string QuestionActionSheet {
+            get {
+                return ResourceManager.GetString("QuestionActionSheet", resourceCulture);
             }
         }
         

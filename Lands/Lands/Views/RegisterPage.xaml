@@ -12,9 +12,10 @@
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Register}">
-            <StackLayout>
+            <StackLayout
+                Padding="10">
                 <circledimage:CircleImage
-                Aspect="AspectFill"
+                Aspect="AspectFit"
                 HeightRequest="200"
                 Source="{Binding ImageSource}">
                     <circledimage:CircleImage.GestureRecognizers>
@@ -28,6 +29,9 @@
                     TextColor="Blue"
                     FontSize="Medium">
                 </Label>
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning}">
+                </ActivityIndicator>
                 <Grid
                     Padding="10">
                     <Grid.ColumnDefinitions>
@@ -108,6 +112,7 @@
                     </Entry>
                 </Grid>
                 <Button
+                    IsEnabled="{Binding IsEnabled}"
                     HeightRequest="50"
                     Text="Register"
                     FontSize="Medium"
