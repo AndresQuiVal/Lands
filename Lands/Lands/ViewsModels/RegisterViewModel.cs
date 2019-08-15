@@ -76,7 +76,7 @@ namespace Lands.ViewsModels
                 var source = await Application.Current.MainPage.DisplayActionSheet(
                     Languages.QuestionActionSheet,
                     Languages.CancelTextButton,
-                    "Destruction Button",
+                    null,
                     Languages.GalleryTextButton,
                     Languages.PhotoTextButton);
 
@@ -119,56 +119,22 @@ namespace Lands.ViewsModels
 
         public async void Register()
         {
-            if (string.IsNullOrEmpty(this.Name))
+            if (string.IsNullOrEmpty(this.Name) || string.IsNullOrEmpty(this.LastName) || string.IsNullOrEmpty(this.Email)
+                || string.IsNullOrEmpty(this.Telephone) || string.IsNullOrEmpty(Password) 
+                || string.IsNullOrEmpty(ConfirmPassword))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.ErrorTitle,
-                    "You must enter a name",
+                    "Empty fields aren't valid",
                     Languages.AcceptButton);
                 return;
             }
 
-            if (string.IsNullOrEmpty(this.LastName))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    Languages.ErrorTitle,
-                    "You must enter a last name",
-                    Languages.AcceptButton);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.Email))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    Languages.ErrorTitle,
-                    "You must enter an email",
-                    Languages.AcceptButton);
-                return;
-            }
-
-            if (!RegexUtilities.IsValidEmail(this.Email))
+            if (!RegexUtilities.IsValidEmailAddress(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.ErrorTitle,
                     "The email is not valid",
-                    Languages.AcceptButton);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.Telephone))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    Languages.ErrorTitle,
-                    "you must enter your phone number",
-                    Languages.AcceptButton);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.Password))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    Languages.ErrorTitle,
-                    "you must enter a password",
                     Languages.AcceptButton);
                 return;
             }
@@ -178,15 +144,6 @@ namespace Lands.ViewsModels
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.ErrorTitle,
                     "The password length must be more than 6 characters",
-                    Languages.AcceptButton);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(this.ConfirmPassword))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    Languages.ErrorTitle,
-                    "You must enter the confirm password",
                     Languages.AcceptButton);
                 return;
             }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System;
 using System.Text.RegularExpressions;
-
+using System.Net.Mail;
 
 namespace Lands.Helpers
 {
@@ -25,6 +25,19 @@ namespace Lands.Helpers
                 }
             }
             else
+            {
+                return false;
+            }
+        }
+
+        public static bool IsValidEmailAddress(string email)
+        {
+            try
+            {
+                MailAddress mail = new MailAddress(email);
+                return true;
+            }
+            catch
             {
                 return false;
             }
