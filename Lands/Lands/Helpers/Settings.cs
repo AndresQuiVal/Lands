@@ -3,6 +3,7 @@ using Plugin.Settings.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Lands.Models;
 
 namespace Lands.Helpers
 {
@@ -19,7 +20,8 @@ namespace Lands.Helpers
 
         private const string token = "Token";
         private const string tokenType = "TokenType";
-        private static readonly string SettingsDefault = string.Empty;
+        private const string userId = "UserID";
+        private static readonly string SettingsDefault = string.Empty; // change to string.Empty
 
         #endregion
         public static string Token
@@ -43,6 +45,18 @@ namespace Lands.Helpers
             set
             {
                 AppSettings.AddOrUpdateValue(tokenType, value);
+            }
+        }
+
+        public static string UserID
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(userId, SettingsDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(userId, value);
             }
         }
     }

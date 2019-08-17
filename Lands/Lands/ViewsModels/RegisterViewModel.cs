@@ -20,6 +20,12 @@ namespace Lands.ViewsModels
 
         #region Attributes
         private bool isRunning;
+        private string name;
+        private string lastname;
+        private string email;
+        private string phone;
+        private string password;
+        private string confirmPassword;
         private bool isEnabled;
         private ImageSource imageSource;
         private MediaFile file;
@@ -36,12 +42,36 @@ namespace Lands.ViewsModels
 
         #region Properties
         public ImageSource ImageSource { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Telephone { get; set; }
-        public string Password { get; set; }
-        public string ConfirmPassword { get; set; }
+        public string Name
+        {
+            get { return this.name; }
+            set { SetValue(ref this.name, value); }
+        }
+        public string LastName
+        {
+            get { return this.lastname; }
+            set { SetValue(ref this.lastname, value); }
+        }
+        public string Email
+        {
+            get { return this.email; ; }
+            set { SetValue(ref this.email, value); }
+        }
+        public string Phone
+        {
+            get { return this.phone; }
+            set { SetValue(ref this.phone, value); }
+        }
+        public string Password
+        {
+            get { return this.password; }
+            set { SetValue(ref this.password, value); }
+        }
+        public string ConfirmPassword
+        {
+            get { return this.confirmPassword; }
+            set { SetValue(ref this.confirmPassword, value); }
+        }
         public bool IsRunning
         {
             get { return this.isRunning; }
@@ -73,7 +103,7 @@ namespace Lands.ViewsModels
             if (CrossMedia.Current.IsCameraAvailable &&
                 CrossMedia.Current.IsTakePhotoSupported)
             {
-                var source = await Application.Current.MainPage.DisplayActionSheet(
+                string source = await Application.Current.MainPage.DisplayActionSheet(
                     Languages.QuestionActionSheet,
                     Languages.CancelTextButton,
                     null,
@@ -120,8 +150,8 @@ namespace Lands.ViewsModels
         public async void Register()
         {
             if (string.IsNullOrEmpty(this.Name) || string.IsNullOrEmpty(this.LastName) || string.IsNullOrEmpty(this.Email)
-                || string.IsNullOrEmpty(this.Telephone) || string.IsNullOrEmpty(Password) 
-                || string.IsNullOrEmpty(ConfirmPassword))
+                || string.IsNullOrEmpty(this.Phone) || string.IsNullOrEmpty(this.Password) 
+                || string.IsNullOrEmpty(this.ConfirmPassword))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.ErrorTitle,
@@ -178,12 +208,12 @@ namespace Lands.ViewsModels
                 imageArray = FilesHelper.ReadFully(this.file.GetStream());
             }
 
-            var user = new User
+            var user = new UserInfo
             {
                 Email = this.Email,
                 FirstName = this.Name,
                 LastName = this.LastName,
-                Telephone = this.Telephone,
+                Telephone = this.Phone,
                 //ImageArray = imageArray,
                 UserTypeId = 1,
                 //Password = this.Password,

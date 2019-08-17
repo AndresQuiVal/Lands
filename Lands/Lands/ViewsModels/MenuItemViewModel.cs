@@ -9,12 +9,28 @@ using Xamarin.Forms;
 
 namespace Lands.ViewsModels
 {
-    public class MenuItemViewModel
+    public class MenuItemViewModel : BaseViewModel
     {
+        #region Attributes
+        private string userName;
+        #endregion
+
+        #region Constructors
+        //public MenuItemViewModel()
+        //{
+        //    UserName = string.Format("Hello {0}", MainViewModel.GetInstance().User.FirstName); // ERROR OVER THIS LINE
+        //}
+        #endregion
+
         #region Properties
         public string Icon { get; set; }
         public string Title { get; set; }
         public string PageName { get; set; }
+        //public string UserName
+        //{
+        //    get { return this.userName; }
+        //    set { SetValue(ref this.userName, value); }
+        //}
         #endregion
 
         #region Commands
@@ -25,7 +41,7 @@ namespace Lands.ViewsModels
         #endregion
 
         #region Methods
-        public void Navigation()
+        public async void Navigation()
         {
             if (this.PageName == "LoginPage")
             {
@@ -33,7 +49,13 @@ namespace Lands.ViewsModels
                 MainViewModel.GetInstance().Login.Password = "";
                 Settings.Token = string.Empty;
                 Settings.TokenType = string.Empty;
+                Settings.UserID = string.Empty;
                 Application.Current.MainPage = new NavigationPage(new LoginPage());
+            }
+            else if (this.PageName == "AccountPage")
+            {
+                MainViewModel.GetInstance().UserPage = new UserViewModel(MainViewModel.GetInstance().User);
+                await App.Navigator.PushAsync(new UserPage());
             }
         }
         #endregion

@@ -3,13 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Lands.ViewsModels
 {
-    class MainViewModel // More important class
+    class MainViewModel : BaseViewModel // More important class
     {
         #region Atributes
-
+        private ObservableCollection<MenuItemViewModel> menuItems;
+        private ImageSource imageSource;
+        private string userName;
         #endregion
 
         #region Properties
@@ -18,18 +21,35 @@ namespace Lands.ViewsModels
         public LandsViewModel Lands { get; set; }
         public LandViewModel Land { get; set; }
         public RegisterViewModel Register { get; set; }
+        public UserViewModel UserPage { get; set; }
         public string Token { get; set; }
         public string TokenType { get; set; }
+        public UserInfo User { get; set; }
+        public ObservableCollection<MenuItemViewModel> MenuItems
+        {
+            get { return this.menuItems; }
+            set { SetValue(ref this.menuItems, value); }
+        }
+        #endregion
 
-        public ObservableCollection<MenuItemViewModel> MenuItems { get; set; }
+        #region MenuPage controlls
+        public string UserName
+        {
+            get { return this.userName; }
+            set { SetValue(ref this.userName, value); }
+        }
 
+        public ImageSource ImageSource
+        {
+            get { return this.imageSource; }
+            set { SetValue(ref this.imageSource, value); }
+        }
         #endregion
 
         #region Constructor
 
         public MainViewModel()
         {
-            this.LoadMenuItems();
             Login = new LoginViewModel();
             instance = this;
         }
@@ -42,7 +62,7 @@ namespace Lands.ViewsModels
         {
             if (instance == null)
             {
-                return new MainViewModel();
+                instance = new MainViewModel();
             }
             return instance;
         }

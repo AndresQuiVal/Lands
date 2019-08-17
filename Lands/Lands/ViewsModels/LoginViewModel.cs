@@ -12,6 +12,7 @@ namespace Lands.ViewsModels
     using Lands.Services;
     using Models;
     using Lands.Helpers;
+    using System.Linq;
     #endregion
 
     class LoginViewModel : BaseViewModel // Class that with allow us to change the value of the props in execution time of the app
@@ -116,29 +117,46 @@ namespace Lands.ViewsModels
                     Languages.AcceptButton);
                 return;
             }
+            Response responseUsersList = await apiService.GetList<UserInfo>(
+                "https://landsapi1.azurewebsites.net",
+                "/api",
+                "/Users");
 
+            if (!responseUsersList.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.ErrorTitle,
+                    responseUsersList.Message,
+                    Languages.AcceptButton);
+                return;
+            }
+            List<UserInfo> listUsers = (List<UserInfo>)responseUsersList.Result;
+            var user = listUsers.Where(u => u.Email == this.Email).FirstOrDefault();
             if (this.IsRemembered)
             {
                 Settings.Token = token.AccessToken;
                 Settings.TokenType = token.TokenType;
+                Settings.UserID = user.UserId.ToString();
             }
-            else
-            {
-                Settings.Token = token.AccessToken;
-                Settings.TokenType = token.TokenType;
-            }
+            MainViewModel.GetInstance().User = user;
             MainViewModel.GetInstance().Token = token.AccessToken;
             MainViewModel.GetInstance().TokenType = token.TokenType;
             this.IsRunning = false;
             this.IsEnabled = true;
-            //await Application.Current.MainPage.DisplayAlert(
-            //    "Completed",
-            //    $"Welcome {Email}",
-            //    "Accept");
+            //var menuItem = new MenuItemViewModel()
+            //{
+            //    UserName = user.FirstName
 
-            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            var Main = MainViewModel.GetInstance();
+            Main.LoadMenuItems();
+            Main.UserName = string.Format("Hola {0}", user.FirstName);
+            Main.ImageSource = user.ImageFullPath;
+            if (user.ImageFullPath == "noimage")
+            {
+                Main.ImageSource = "cameraImage";
+            }
+            Main.Lands = new LandsViewModel();
             Application.Current.MainPage = new MasterPage();
-            //await Application.Current.MainPage.Navigation.PushModalAsync(new MasterPage());
         }
 
         public async void RegisterMethod()

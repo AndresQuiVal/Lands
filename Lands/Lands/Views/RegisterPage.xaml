@@ -15,9 +15,9 @@
             <StackLayout
                 Padding="10">
                 <circledimage:CircleImage
-                Aspect="AspectFit"
-                HeightRequest="200"
-                Source="{Binding ImageSource}">
+                    Aspect="AspectFit"
+                    HeightRequest="200"
+                    Source="{Binding ImageSource}">
                     <circledimage:CircleImage.GestureRecognizers>
                         <TapGestureRecognizer Command="{Binding ChangeImageCommand}"/>
                     </circledimage:CircleImage.GestureRecognizers>
@@ -59,7 +59,7 @@
                     <Entry
                         Grid.Row="1"
                         Grid.Column="1"
-                        Text="{Binding Lastname}"
+                        Text="{Binding LastName}"
                         Placeholder="Enter your name">
                     </Entry>
                     <Label
@@ -83,7 +83,7 @@
                     <Entry
                         Grid.Row="3"
                         Grid.Column="1"
-                        Text="{Binding Telephone}"
+                        Text="{Binding Phone}"
                         Placeholder="Enter your name">
                     </Entry>
                     <Label

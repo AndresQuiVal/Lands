@@ -7,9 +7,10 @@
              mc:Ignorable="d"
              x:Class="Lands.App">
     <Application.Resources>
-        <ResourceDictionary><!--Diccionario de recursos, primer vistazo de la aplicación-->
-            <infra:InstanceLocator x:Key="Locator"/><!--para ligar la viewmodel con esta página-->
+        <ResourceDictionary>
+            <!--Diccionario de recursos, primer vistazo de la aplicación-->
+            <infra:InstanceLocator x:Key="Locator"/>
+            <!--para ligar la viewmodel con esta página-->
         </ResourceDictionary>
-
     </Application.Resources>
 </Application>

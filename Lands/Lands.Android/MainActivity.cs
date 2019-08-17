@@ -6,6 +6,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using FFImageLoading.Forms.Platform;
+using Android.Support.V4.Content;
+using Android.Support.V4.App;
 
 namespace Lands.Droid
 {
@@ -14,6 +16,14 @@ namespace Lands.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            //int requestPermissions = 0;
+            //string cameraPermission = Android.Manifest.Permission.Camera;
+
+            //if (!(ContextCompat.CheckSelfPermission(this, cameraPermission) == (int)Permission.Granted))
+            //{
+            //    ActivityCompat.RequestPermissions(this, new String[] { cameraPermission, }, requestPermissions);
+            //}
+
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
             //CachedImageRenderer.InitImageViewHandler();
@@ -25,10 +35,11 @@ namespace Lands.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, 
+            [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
+           // Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }

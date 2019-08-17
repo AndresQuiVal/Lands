@@ -5,16 +5,33 @@ using Newtonsoft.Json;
 
 namespace Lands.Models
 {
-    public class User
+    public class UserInfo
     {
-        public int UserId { get; set; }
+        [JsonProperty("UserId")]
+        public long UserId { get; set; }
+
+        [JsonProperty("FirstName")]
         public string FirstName { get; set; }
+
+        [JsonProperty("LastName")]
         public string LastName { get; set; }
+
+        [JsonProperty("Email")]
         public string Email { get; set; }
+
+        [JsonProperty("Telephone")]
         public string Telephone { get; set; }
+
+        [JsonProperty("ImagePath")]
         public object ImagePath { get; set; }
+
+        [JsonProperty("ImageFullPath")]
         public string ImageFullPath { get; set; }
+
+        [JsonProperty("FullName")]
         public string FullName { get; set; }
-        public int UserTypeId { get; set; }
+
+        [JsonProperty("UserTypeId")]
+        public long UserTypeId { get; set; }
     }
 }

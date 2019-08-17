@@ -5,6 +5,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    xmlns:imageCircle="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
     BackgroundColor="MidnightBlue"
     Title="Menu"
     mc:Ignorable="d"
@@ -12,12 +13,20 @@
     <ContentPage.Content>
         <StackLayout
             Padding="20">
-            <Image
+            <imageCircle:CircleImage
                 Grid.Column="0"
-                Source="google_earth"
-                HeightRequest="100"
+                Aspect="AspectFit"
+                Source="{Binding ImageSource}"
+                HeightRequest="150"
                 VerticalOptions="Center">
-            </Image>
+            </imageCircle:CircleImage>
+            <Label
+                Text="{Binding UserName}"
+                FontSize="Large"
+                TextColor="White"
+                FontAttributes="Bold"
+                HorizontalOptions="Center">
+            </Label>
             <ListView
                 BackgroundColor="MidnightBlue"
                 ItemsSource="{Binding MenuItems}"

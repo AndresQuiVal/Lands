@@ -162,4 +162,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\cameraImage.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\userImage.png" />
+  </ItemGroup>
 </Project>
