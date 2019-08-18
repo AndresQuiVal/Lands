@@ -14,6 +14,8 @@ namespace Lands
         ApiService apiService;
         public static NavigationPage Navigator { get; internal set; }
 
+        private MasterPage masterPage;
+
         public App()
         {
             InitializeComponent();
@@ -26,8 +28,9 @@ namespace Lands
                 MainViewModel.GetInstance().Token = Settings.Token;
                 MainViewModel.GetInstance().TokenType = Settings.TokenType;
                 MainViewModel.GetInstance().Lands = new LandsViewModel();
+                masterPage = new MasterPage();
                 this.LoadUser();
-                MainPage = new MasterPage();
+                MainPage = masterPage;
             }
         }
         protected override void OnStart()
@@ -59,8 +62,8 @@ namespace Lands
             }
             var getResponse = await apiService.Get<UserInfo>(
                 "http://landsapi1.azurewebsites.net",
-                "/api/User",
-                string.Format("/{0}", Settings.UserID.ToString()));
+                "/api",
+                string.Format("/Users/{0}", Settings.UserID.ToString()));
             if (!getResponse.IsSuccess)
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -71,6 +74,14 @@ namespace Lands
             }
             var user = (UserInfo)getResponse.Result;
             MainViewModel.GetInstance().User = user;
+            MainViewModel.GetInstance().UserName = string.Format("Hola {0}", user.FirstName);
+            MainViewModel.GetInstance().ImageSource = user.ImageFullPath;
+            if (user.ImagePath == null)
+            {
+                MainViewModel.GetInstance().ImageSource = "cameraImage";
+            }
+            MainViewModel.GetInstance().MasterPage = masterPage;
+            MainViewModel.GetInstance().LoadMenuItems();
         }
     }
 }

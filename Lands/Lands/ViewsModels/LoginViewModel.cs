@@ -156,7 +156,9 @@ namespace Lands.ViewsModels
                 Main.ImageSource = "cameraImage";
             }
             Main.Lands = new LandsViewModel();
-            Application.Current.MainPage = new MasterPage();
+            var masterPage = new MasterPage();
+            MainViewModel.GetInstance().MasterPage = masterPage;
+            Application.Current.MainPage = masterPage;
         }
 
         public async void RegisterMethod()

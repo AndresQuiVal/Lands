@@ -1,4 +1,5 @@
 ﻿using Lands.Models;
+using Lands.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -57,6 +58,7 @@ namespace Lands.ViewsModels
 
         #region SingleTon
         private static MainViewModel instance;
+        internal MasterPage MasterPage;
 
         public static MainViewModel GetInstance()
         {

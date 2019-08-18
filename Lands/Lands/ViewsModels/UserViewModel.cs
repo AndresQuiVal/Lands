@@ -19,6 +19,7 @@ namespace Lands.ViewsModels
         {
             apiService = new ApiService();
             localUser = user;
+            MainViewModel.GetInstance().MasterPage.IsPresented = false;
             this.LoadUserContent();
         }
         #endregion
