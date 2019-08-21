@@ -13,6 +13,7 @@ namespace Lands.ViewsModels
     using Models;
     using Lands.Helpers;
     using System.Linq;
+    using Plugin.LocalNotifications;
     #endregion
 
     class LoginViewModel : BaseViewModel // Class that with allow us to change the value of the props in execution time of the app
@@ -65,6 +66,14 @@ namespace Lands.ViewsModels
                 return new RelayCommand(RegisterMethod);
             }
         } // property that references the Command for the specific Button
+
+        public ICommand LocalNotificationCommand
+        {
+            get
+            {
+                return new RelayCommand(SendNotification);
+            }
+        }
         #endregion
 
         #region Constructors
@@ -165,6 +174,11 @@ namespace Lands.ViewsModels
         {
             MainViewModel.GetInstance().Register = new RegisterViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage());
+        }
+
+        public void SendNotification()
+        {
+            CrossLocalNotifications.Current.Show("title", "body", 101, DateTime.Now.AddSeconds(5));
         }
         #endregion
     }

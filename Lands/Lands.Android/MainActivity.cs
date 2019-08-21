@@ -9,6 +9,7 @@ using FFImageLoading.Forms.Platform;
 using Android.Support.V4.Content;
 using Android.Support.V4.App;
 using Plugin.CurrentActivity;
+using Plugin.LocalNotifications;
 
 namespace Lands.Droid
 {
@@ -20,6 +21,7 @@ namespace Lands.Droid
             
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+            LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.techTOPSLOGO;
             //CachedImageRenderer.InitImageViewHandler();
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             CachedImageRenderer.Init(enableFastRenderer: true); // false too

@@ -103,6 +103,7 @@
                     Padding="20">
                     <Button
                         Text="Facebook"
+                        Command="{Binding LocalNotificationCommand}"
                         TextColor="White"
                         BackgroundColor="DarkBlue"
                         CornerRadius="20">
