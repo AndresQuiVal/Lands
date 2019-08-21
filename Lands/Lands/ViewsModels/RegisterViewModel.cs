@@ -41,7 +41,11 @@ namespace Lands.ViewsModels
         #endregion
 
         #region Properties
-        public ImageSource ImageSource { get; set; }
+        public ImageSource ImageSource
+        {
+            get { return this.imageSource; }
+            set { SetValue(ref this.imageSource, value); }
+        }
         public string Name
         {
             get { return this.name; }
