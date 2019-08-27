@@ -11,9 +11,10 @@ using Xamarin.Forms;
 
 namespace Lands.Helpers
 {
-    public class DataAccess
+    public class DataAccess : IDisposable
     {
         private SQLiteConnection connection;
+
         public DataAccess()
         {
             var config = DependencyService.Get<IConfig>();

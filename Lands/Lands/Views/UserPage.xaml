@@ -23,40 +23,70 @@
                     </roundedImage:CircleImage.GestureRecognizers>
                 </roundedImage:CircleImage>
                 <Label
-                    Text="{Binding FullName}"
+                    Text="Full Name"
                     FontSize="Large"
                     FontAttributes="Bold"
-                    HorizontalOptions="CenterAndExpand"
                     TextColor="Black">
                 </Label>
+                <Entry
+                    Text="{Binding FullName}"
+                    Placeholder="Full name"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    TextColor="Black">
+                </Entry>
                 <Label
+                    Text="First name"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    TextColor="Black">
+                </Label>
+                <Entry
+                    Placeholder="First name"
                     Text="{Binding FirstName}"
                     FontSize="Medium"
                     FontAttributes="Bold"
-                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black">
+                </Entry>
+                <Label
+                    Text="Last name"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
                     TextColor="Black">
                 </Label>
-                <Label
+                <Entry
+                    Placeholder="Last name"
                     Text="{Binding LastName}"
                     FontSize="Medium"
                     FontAttributes="Bold"
-                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black">
+                </Entry>
+                <Label
+                    Text="Email"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
                     TextColor="Black">
                 </Label>
-                <Label
+                <Entry
+                    Placeholder="Email"
                     Text="{Binding Email}"
                     FontSize="Medium"
                     FontAttributes="Bold"
-                    HorizontalOptions="CenterAndExpand"
+                    TextColor="Black">
+                </Entry>
+                <Label
+                    Text="Phone number"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
                     TextColor="Black">
                 </Label>
-                <Label
+                <Entry
+                    Placeholder="Phone number"
                     Text="{Binding Telephone}"
                     FontSize="Medium"
                     FontAttributes="Bold"
-                    HorizontalOptions="CenterAndExpand"
                     TextColor="Black">
-                </Label>
+                </Entry>
                 <Grid
                     Padding="2">
                     <Grid.ColumnDefinitions>

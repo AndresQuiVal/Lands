@@ -19,10 +19,9 @@ namespace Lands.ViewsModels
     class LoginViewModel : BaseViewModel // Class that with allow us to change the value of the props in execution time of the app
     {
         #region Services
-
         ApiService apiService;
-        
         #endregion
+
         #region Private class fields
         private string email;
         private string password;
@@ -147,7 +146,7 @@ namespace Lands.ViewsModels
                 Settings.TokenType = token.TokenType;
                 Settings.UserID = user.UserId.ToString();
             }
-            MainViewModel.GetInstance().User = user;
+            MainViewModel.GetInstance().User = user;//user;
             MainViewModel.GetInstance().Token = token.AccessToken;
             MainViewModel.GetInstance().TokenType = token.TokenType;
             this.IsRunning = false;

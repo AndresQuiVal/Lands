@@ -25,6 +25,7 @@ namespace Lands
             }
             else
             {
+                var mainViewModel = MainViewModel.GetInstance();
                 MainViewModel.GetInstance().Token = Settings.Token;
                 MainViewModel.GetInstance().TokenType = Settings.TokenType;
                 MainViewModel.GetInstance().Lands = new LandsViewModel();
@@ -73,6 +74,7 @@ namespace Lands
                 return;
             }
             var user = (UserInfo)getResponse.Result;
+            /* MainViewModel.GetInstance().User = user;*/ //-- DISCOMMENT FOR GOOD RUNTIME EXECUTION
             MainViewModel.GetInstance().User = user;
             MainViewModel.GetInstance().UserName = string.Format("Hola {0}", user.FirstName);
             MainViewModel.GetInstance().ImageSource = user.ImageFullPath;

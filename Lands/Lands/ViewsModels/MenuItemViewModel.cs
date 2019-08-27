@@ -54,7 +54,8 @@ namespace Lands.ViewsModels
             }
             else if (this.PageName == "AccountPage")
             {
-                MainViewModel.GetInstance().UserPage = new UserViewModel(MainViewModel.GetInstance().User);
+                var user = MainViewModel.GetInstance().User;
+                MainViewModel.GetInstance().UserPage = new UserViewModel(user);
                 await App.Navigator.PushAsync(new UserPage());
             }
         }

@@ -180,6 +180,9 @@
   <data name="FrenchTranslation" xml:space="preserve">
     <value>Français</value>
   </data>
+  <data name="GalleryButton" xml:space="preserve">
+    <value>Galerie</value>
+  </data>
   <data name="GalleryTextButton" xml:space="preserve">
     <value>De la galerie</value>
   </data>
@@ -219,6 +222,9 @@
   <data name="PhotoTextButton" xml:space="preserve">
     <value>Prendre une photo</value>
   </data>
+  <data name="PicButton" xml:space="preserve">
+    <value>Take a photo</value>
+  </data>
   <data name="PopulationRangeText" xml:space="preserve">
     <value>Gamme de population</value>
   </data>
@@ -227,6 +233,9 @@
   </data>
   <data name="QuestionActionSheet" xml:space="preserve">
     <value>D'où voulez-vous prendre l'image?</value>
+  </data>
+  <data name="QuestionImagePicker" xml:space="preserve">
+    <value>D'où vous voulez sélectionner l'image?</value>
   </data>
   <data name="RegionText" xml:space="preserve">
     <value>Région</value>

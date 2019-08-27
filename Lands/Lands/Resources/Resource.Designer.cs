@@ -250,6 +250,15 @@ namespace Lands.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Gallery.
+        /// </summary>
+        public static string GalleryButton {
+            get {
+                return ResourceManager.GetString("GalleryButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From gallery.
         /// </summary>
         public static string GalleryTextButton {
@@ -367,6 +376,15 @@ namespace Lands.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prendre une photo.
+        /// </summary>
+        public static string PicButton {
+            get {
+                return ResourceManager.GetString("PicButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Population range.
         /// </summary>
         public static string PopulationRangeText {
@@ -390,6 +408,15 @@ namespace Lands.Resources {
         public static string QuestionActionSheet {
             get {
                 return ResourceManager.GetString("QuestionActionSheet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to From where you want to select the image?.
+        /// </summary>
+        public static string QuestionImagePicker {
+            get {
+                return ResourceManager.GetString("QuestionImagePicker", resourceCulture);
             }
         }
         
