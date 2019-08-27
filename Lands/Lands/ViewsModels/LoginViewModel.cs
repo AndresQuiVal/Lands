@@ -14,6 +14,9 @@ namespace Lands.ViewsModels
     using Lands.Helpers;
     using System.Linq;
     using Plugin.LocalNotifications;
+    using SQLite;
+    using SQLite.Net;
+    using System.IO;
     #endregion
 
     class LoginViewModel : BaseViewModel // Class that with allow us to change the value of the props in execution time of the app
