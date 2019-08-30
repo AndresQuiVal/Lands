@@ -223,9 +223,8 @@ namespace Lands.ViewsModels
                 //Password = this.Password,
             };
 
-            var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
             var response = await this.apiService.Post(
-                apiSecurity,
+                "https://landsapi1.azurewebsites.net",
                 "/api",
                 "/Users",
                 user);

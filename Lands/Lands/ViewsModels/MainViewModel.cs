@@ -23,6 +23,7 @@ namespace Lands.ViewsModels
         public LandViewModel Land { get; set; }
         public RegisterViewModel Register { get; set; }
         public UserViewModel UserPage { get; set; }
+        public ChangePasswordViewModel ChangePassword { get; set; }
         public string Token { get; set; }
         public string TokenType { get; set; }
         public UserInfo User { get; set; }

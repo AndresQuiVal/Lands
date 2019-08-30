@@ -2,6 +2,7 @@
 using Lands.Helpers;
 using Lands.Models;
 using Lands.Services;
+using Lands.Views;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System;
@@ -22,6 +23,7 @@ namespace Lands.ViewsModels
         public UserViewModel(UserInfo user)
         {
             apiService = new ApiService();
+            IsEnabled = true;
             localUser = user;
             MainViewModel.GetInstance().MasterPage.IsPresented = false;
             this.LoadUserContent();
@@ -59,6 +61,18 @@ namespace Lands.ViewsModels
             get { return this.phoneNumber; }
             set { SetValue(ref this.phoneNumber, value); }
         }
+
+        public bool IsEnabled
+        {
+            get { return this.isEnabled; }
+            set { SetValue(ref this.isEnabled, value); }
+        }
+
+        public bool IsRunning
+        {
+            get { return this.isRunning; }
+            set { SetValue(ref this.isRunning, value); }
+        }
         #endregion
 
         #region Attributes
@@ -69,6 +83,8 @@ namespace Lands.ViewsModels
         private string lastName;
         private string email;
         private string phoneNumber;
+        private bool isEnabled;
+        private bool isRunning;
         private MediaFile file;
         #endregion
 
@@ -128,12 +144,109 @@ namespace Lands.ViewsModels
                     return;
             }
         }
+
+        public async void ChangePassword()
+        {
+            MainViewModel.GetInstance().ChangePassword = new ChangePasswordViewModel();
+            await App.Navigator.PushAsync(new ChangePasswordPage());
+        }
+
+        public async void EditUser()
+        {
+            IsRunning = true;
+            IsEnabled = false;
+            if (string.IsNullOrEmpty(this.FirstName) || string.IsNullOrEmpty(this.LastName) || string.IsNullOrEmpty(this.Email)
+                || string.IsNullOrEmpty(this.PhoneNumber))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.ErrorTitle,
+                    "Empty fields aren't valid",
+                    Languages.AcceptButton);
+                IsRunning = false;
+                IsEnabled = true;
+                return;
+            }
+
+            if (!RegexUtilities.IsValidEmailAddress(this.Email))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.ErrorTitle,
+                    "The email is not valid",
+                    Languages.AcceptButton);
+                IsRunning = false;
+                IsEnabled = true;
+                return;
+            }
+
+            var checkConnetion = await this.apiService.CheckConnection();
+            if (!checkConnetion.IsSuccess)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.ErrorTitle,
+                    checkConnetion.Message,
+                    Languages.AcceptButton);
+                IsRunning = false;
+                IsEnabled = true;
+                return;
+            }
+
+            byte[] imageArray = null;
+            if (this.file != null)
+            {
+                imageArray = FilesHelper.ReadFully(this.file.GetStream());
+            }
+
+            var user = new UserInfo
+            {
+                Email = this.Email,
+                FirstName = this.FirstName,
+                LastName = this.LastName,
+                Telephone = this.PhoneNumber,
+                //ImageArray = imageArray,
+                UserTypeId = 1,
+                //Password = this.Password,
+            };
+
+            var response = await this.apiService.Post(
+                "https://landsapi1.azurewebsites.net",
+                "/api",
+                "/Users",
+                user);
+
+            if (!response.IsSuccess)
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.ErrorTitle,
+                    response.Message,
+                    Languages.AcceptButton);
+                IsRunning = false;
+                IsEnabled = true;
+                return;
+            }
+
+            this.IsRunning = false;
+            this.IsEnabled = true;
+
+            await App.Navigator.PopAsync();
+        }
         #endregion
 
         #region Commands
         public ICommand ChangeImageCommand
         {
             get { return new RelayCommand(this.ChangeImage); }
+        }
+
+        public ICommand ChangePasswordCommand
+        {
+            get { return new RelayCommand(this.ChangePassword); }
+        }
+
+        public ICommand EditUserCommand
+        {
+            get { return new RelayCommand(this.EditUser); }
         }
         #endregion
     }
